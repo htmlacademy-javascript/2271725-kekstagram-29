@@ -1,11 +1,9 @@
 const checkStringLength = (str, max) => str.length <= max;
 
-const isLengthMatched1 = checkStringLength('Сложное обучение', 18);
-console.log(isLengthMatched1);
-const isLengthMatched2 = checkStringLength('Сложное обучение', 16);
-console.log(isLengthMatched2);
-const isLengthMatched3 = checkStringLength('Сложное обучение', 10);
-console.log(isLengthMatched3);
+console.log('checkStringLength');
+console.log(checkStringLength('Сложное обучение', 18));
+console.log(checkStringLength('Сложное обучение', 16));
+console.log(checkStringLength('Сложное обучение', 10));
 
 const checkPalindrome = (str) => {
   const string = str.toLowerCase().replace(/ /g, '');
@@ -15,10 +13,10 @@ const checkPalindrome = (str) => {
 };
 
 console.log('checkPalindrome');
-console.log(checkPalindrome('шабаш'));
-console.log(checkPalindrome('Учу'));
-console.log(checkPalindrome('Текст'));
-console.log(checkPalindrome('Лёша на той же полке конфеты нашёл'));
+console.log(checkPalindrome('топот'));
+console.log(checkPalindrome('Довод'));
+console.log(checkPalindrome('Кекс'));
+console.log(checkPalindrome('Лёша на полке клопа нашёл '));
 
 
 const getNun = (str) => {
@@ -33,7 +31,7 @@ const getNun = (str) => {
   });
 
   return +result;
-}
+};
 
 console.log('getNun');
 console.log(getNun('2018 год'));
