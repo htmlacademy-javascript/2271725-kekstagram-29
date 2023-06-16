@@ -30,15 +30,15 @@ const getNun = (str) => {
     }
   });
 
-  return +result;
+  return +result !== 0 ? +result : NaN;
 };
 
-console.log('getNun');
+console.log('getNan');
 console.log(getNun('2018 год'));
 console.log(getNun('ECMAScript2021'));
-console.log(getNun('2 хлеба, 0.8 молока'));
+console.log(getNun('1 кефир, 0.5 батона'));
 console.log(getNun('ваз 006'));
-console.log(getNun('у меня автомобиль'));
+console.log(getNun('а я томат'));
 console.log(getNun(2023));
 console.log(getNun(-1));
 console.log(getNun(1.5));
