@@ -1,4 +1,4 @@
-const DESCRIPTIONS  = [
+const DESCRIPTIONS = [
   'круто',
   'шоколад',
   'вкусное',
@@ -35,11 +35,12 @@ const getRandomInteger = (a, b) => {
 };
 
 const getMessage = () => COMMENTS[getRandomInteger(0, COMMENTS.length - 1)];
+const ARRAY_OF_OBJECTS = 25;
 
 const generateComment = (_, i) => ({
   id: i,
-  avatar : `img/avatar-${getRandomInteger(0, 6)}.svg`,
-  message: Array.from({length:getRandomInteger(1, 2)}, getMessage).join(''),
+  avatar : `img/avatar-${getRandomInteger(0, 6) }.svg`,
+  message: Array.from({length:getRandomInteger(1, 2) }, getMessage).join(' '),
   name: NAMES[getRandomInteger(0, NAMES.length - 1)],
 });
 
@@ -51,9 +52,5 @@ const createPost = (i) => ({
   comments: Array.from({ length: getRandomInteger(0, 30) }, generateComment),
 });
 
-function generateArrayOfObjects() {
-  return Array.from({ length: 25 }, (_, i) => createPost(i + 1));
-}
-
-const arrayOfObjects = generateArrayOfObjects();
+const arrayOfObjects = Array.from({ length: ARRAY_OF_OBJECTS }, (_, i) => createPost(i + 1));
 console.log(arrayOfObjects);
