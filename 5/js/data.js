@@ -1,4 +1,4 @@
-import {getRandomInteger} from './util.js';
+import {getRandomElement, getRandomInteger} from './util.js';
 
 const DESCRIPTIONS = [
   'круто',
@@ -29,24 +29,23 @@ const NAMES = [
   'Влад',
 ];
 
-const getMessage = () => COMMENTS[getRandomInteger(0, COMMENTS.length - 1)];
-const ARRAY_OF_OBJECTS = 25;
+const POST_AMOUNT = 25;
 
 const generateComment = (_, i) => ({
   id: i,
   avatar : `img/avatar-${getRandomInteger(0, 6) }.svg`,
-  message: Array.from({length:getRandomInteger(1, 2) }, getMessage).join(' '),
-  name: NAMES[getRandomInteger(0, NAMES.length - 1)],
+  message: Array.from({length:getRandomInteger(1, 2) }, () => getRandomElement(COMMENTS)).join(' '),
+  name: getRandomElement(NAMES),
 });
 
 const createPost = (i) => ({
   id: i,
   url: `photos/${i}.jpg`,
-  description: DESCRIPTIONS[getRandomInteger(0,DESCRIPTIONS.length - 1)],
+  description: getRandomElement(DESCRIPTIONS),
   likes: getRandomInteger(15, 200),
   comments: Array.from({ length: getRandomInteger(0, 30) }, generateComment),
 });
 
-const arrayOfObjects = Array.from({ length: ARRAY_OF_OBJECTS }, (_, i) => createPost(i + 1));
+const posts = Array.from({ length: POST_AMOUNT }, (_, i) => createPost(i + 1));
 
-export {arrayOfObjects};
+export {posts};

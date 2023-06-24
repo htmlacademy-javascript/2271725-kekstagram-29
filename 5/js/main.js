@@ -1,5 +1,3 @@
-import {arrayOfObjects} from './data.js';
+import {posts} from './data.js';
 
-console.log(
-  arrayOfObjects()
-);
+console.log(posts);
