@@ -1,3 +1,4 @@
-import {posts} from './data.js';
+import { posts } from './data.js';
+import { renderThumbnails } from './thumbnail.js';
 
-console.log(posts);
+renderThumbnails(posts);

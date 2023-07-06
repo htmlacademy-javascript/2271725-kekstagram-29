@@ -48,4 +48,4 @@ const createPost = (i) => ({
 
 const posts = Array.from({ length: POST_AMOUNT }, (_, i) => createPost(i + 1));
 
-export {posts};
+export { posts };
