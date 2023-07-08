@@ -1,4 +1,5 @@
 import { posts } from './data.js';
-import { renderThumbnails } from './thumbnail.js';
+import { renderGallery } from './gallery.js';
 
-renderThumbnails(posts);
+renderGallery(posts);
+
