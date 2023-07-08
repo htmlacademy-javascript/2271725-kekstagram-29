@@ -4,10 +4,10 @@ const commentListElement = bigPictureElement.querySelector('.social__comments');
 const commentsLoaderElement = bigPictureElement.querySelector('.comments-loader');
 const bodyElement = document.querySelector('body');
 const cancelButtonElement = bigPictureElement.querySelector('.big-picture__cancel');
-const commentElement = document.querySelector('#comment').textContent.querySelector('.comments');
+const commentTemplate = document.querySelector('#comment').content.querySelector('.social__comment');
 
 const createComment = ({ avatar, name, message }) => {
-  const comment = commentElement.cloneNode(true);
+  const comment = commentTemplate.cloneNode(true);
 
   comment.querySelector('.social__picture').src = avatar;
   comment.querySelector('.social__picture').alt = name;
