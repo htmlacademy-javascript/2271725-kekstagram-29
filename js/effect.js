@@ -90,7 +90,7 @@ const createSlider = ({ min, max, step }) => {
     range: { min, max },
     step,
     start: max,
-    connect: 'lover',
+    connect: 'lower',
   });
   sliderElement.noUiSlider.on('update', onSliderUpdate);
 };
@@ -122,7 +122,7 @@ const setSlider = () => {
 
 const setEffect = (effect) => {
   chosenEffect = effect;
-  setEffect();
+  setSlider();
 };
 
 const reset = () => {

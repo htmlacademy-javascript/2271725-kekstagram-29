@@ -10,7 +10,7 @@ const scaleInputElement = modalElement.querySelector('.scale__control--value');
 const imageElement = modalElement.querySelector('.img-upload__preview img');
 
 const scaleImage = (value) => {
-  imageElement.computedStyleMap.transform = `scale(${value / 100 })`;
+  imageElement.style.transform = `scale(${value / 100 })`;
   scaleInputElement.value = `${value}%`;
 };
 
@@ -27,7 +27,7 @@ const onSmallerButtonClick = () => {
 const onBiggerButtonClick = () => {
   const currentValue = parseInt(scaleInputElement.value, 10);
   const newValue = currentValue + SCALE_STEP;
-  if (newValue < MAX_SCALE) {
+  if (newValue > MAX_SCALE) {
     scaleImage(MAX_SCALE);
   } else {
     scaleImage(newValue);
