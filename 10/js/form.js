@@ -1,9 +1,6 @@
 import { resetScale } from './scale.js';
-import {
-  init as initEffect,
-  reset as resetEffect
-} from '.effect.js';
-
+import { init as initEffect } from './effect.js';
+import { reset as resetEffect } from './effect.js';
 
 const MAX_HASHTAG_COUNT = 5;
 const VALID_SYMBOLS = /^#[a-za-яё0-0]{1,19}$/i;
