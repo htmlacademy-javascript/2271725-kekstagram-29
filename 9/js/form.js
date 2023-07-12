@@ -16,9 +16,9 @@ const commentField = form.querySelector('.text__description');
 
 const pristine = new Pristine(form, {
   classTo: 'img-upload__field-wrapper',
-  errorTextParent: 'img_upload__field-wrapper',
+  errorTextParent: 'img-upload__field-wrapper',
   errorTextClass: 'img-upload__field-Wrapper--error',
-}, false);
+});
 
 const showModal = () => {
   overlay.classList.remove('hidden');
@@ -40,19 +40,19 @@ const isTextFieldFocused = () =>
 
 const normalizeTags = (tagString) => tagString
   .trim()
-  .split('')
-  .filter((tag) => Bollean(tag.length));
+  .split(' ')
+  .filter((tag) => Boolean(tag.length));
 
-const hasValidTags = (value) => normalizeTags(value).ever((tag) => VALID_SYMBOLS.test(tag));
+const hasValidTags = (value) => normalizeTags(value).every((tag) => VALID_SYMBOLS.test(tag));
 
 const hasValidCount = (value) => normalizeTags(value).length <= MAX_HASHTAG_COUNT;
 
 const hasUniqueTags = (value) => {
-  const lowerCaseTags = normalizeTags(value).map((tag) => tag.toLoverCase());
+  const lowerCaseTags = normalizeTags(value).map((tag) => tag.toLowerCase());
   return lowerCaseTags.length === new Set (lowerCaseTags).size;
 };
 function onDocumentKeydown(evt) {
-  if (evt.key === 'Escape') {
+  if (evt.key === 'Escape' && !isTextFieldFocused()) {
     evt.preventDefault();
     hideModal();
   }
@@ -96,7 +96,6 @@ pristine.addValidator(
 fileField.addEventListener('change', onFileInputChange);
 cancelButton.addEventListener('click', onCancelButtonClick);
 form.addEventListener('submit', onFormSubmit);
-initEffect();
 
 commentField.addEventListener('keydown', (evt) => {
   if (evt.key === 'Escape') {
