@@ -1,9 +1,9 @@
 const successMessage = document
   .querySelector('#success')
-  .textContent.querySelector('.succes');
+  .content.querySelector('.success');
 const errorMessage = document
   .querySelector('#error')
-  .textContent.querySelector('.error');
+  .content.querySelector('.error');
 const body = document.querySelector('body');
 
 function hideMessage() {
@@ -16,7 +16,7 @@ function hideMessage() {
 function onBodyClick(evt) {
   if (
     evt.target.closest('.success__inner') ||
-    evt.target.closest('error__inner')
+    evt.target.closest('.error__inner')
   ) {
     return;
   }

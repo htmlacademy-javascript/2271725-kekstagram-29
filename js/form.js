@@ -50,7 +50,7 @@ const hideModal = () => {
 
 const toggleSubmitButton = (isDisabled) => {
   submitButton.disabled = isDisabled;
-  submitButton.textContent = isDisabled;
+  submitButton.textContent = isDisabled
     ? SubmitButtonText.SUBMITTING
     : SubmitButtonText.IDLE;
 };
@@ -72,8 +72,6 @@ const hasUniqueTags = (value) => {
   const lowerCaseTags = normalizeTags(value).map((tag) => tag.toLowerCase());
   return lowerCaseTags.length === new Set (lowerCaseTags).size;
 };
-
-const isErrorMessageShown = () => Boolean(document.querySelector('.error'));
 
 function onDocumentKeydown(evt) {
   if (evt.key === 'Escape' && !isTextFieldFocused()) {

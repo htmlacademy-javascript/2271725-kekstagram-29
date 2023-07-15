@@ -1,7 +1,7 @@
 # Личный проект «Кекстаграм»
 
 * Студент: [Айк  Аветисян](https://up.htmlacademy.ru/javascript/29/user/2271725).
-* Наставник: [Сергей Остаповец](https://htmlacademy.ru/profile/seraphim).
+* Наставник: [Мария Филиппова](https://htmlacademy.ru/profile/wonderjs).
 
 ---
 
