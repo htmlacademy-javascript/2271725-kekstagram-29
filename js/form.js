@@ -19,6 +19,7 @@ const SubmitButtonText = {
   SUBMITTING: 'Отправляю...',
 };
 
+const effects = document.querySelectorAll('.effects__preview');
 const body = document.querySelector('body');
 const form = document.querySelector('.img-upload__form');
 const imageElement = document.querySelector('.img-upload__preview img');
@@ -77,7 +78,8 @@ const hasUniqueTags = (value) => {
 };
 
 function onDocumentKeydown(evt) {
-  if (evt.key === 'Escape' && !isTextFieldFocused()) {
+  const error = document.querySelector('.error');
+  if (evt.key === 'Escape' && !isTextFieldFocused() && !error) {
     evt.preventDefault();
     hideModal();
   }
@@ -95,6 +97,7 @@ const onFileInputChange = () => {
 
   if(matches) {
     imageElement.src = URL.createObjectURL(file);
+    effects.forEach((item) => (item.style.backgroundImage = `url(${imageElement.src})`));
     showModal();
   }
 };
