@@ -29,7 +29,7 @@ const submitButton = form.querySelector('.img-upload__submit');
 const pristine = new Pristine(form, {
   classTo: 'img-upload__field-wrapper',
   errorTextParent: 'img-upload__field-wrapper',
-  errorTextClass: 'img-upload__field-Wrapper--error',
+  errorTextClass: 'img-upload__field-wrapper--error',
 });
 
 const showModal = () => {
